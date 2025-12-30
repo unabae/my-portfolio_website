@@ -1,4 +1,3 @@
-import {useGLTF} from "@react-three/drei";
 import {useRef} from "react";
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
@@ -6,7 +5,8 @@ import {useGSAP} from "@gsap/react";
 const Target = (props) => {
     const targetRef = useRef();
 
-    const {scene} = useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf')
+    // TODO: Re-enable when the GLTF file is available locally or via a stable URL.
+    // const {scene} = useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf')
 
     useGSAP(
         () => {
@@ -22,7 +22,7 @@ const Target = (props) => {
         <mesh {...props} ref={targetRef}
               rotation={[0, Math.PI / 5, 0]}
               scale={1.5}>
-            <primitive object={scene}/>
+            {/* <primitive object={scene}/> */}
         </mesh>
     )
 }

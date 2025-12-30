@@ -54,14 +54,14 @@ const Experience = () => {
                                         <p className="text-sm mb-5">
                                             {pos} -- {duration}
                                         </p>
-                                        <p className="group-hover:text-white
+                                        <div className="group-hover:text-white
                                         transition ease-in-out duration-500">
                                             <ul className="space-y-2.5">
                                                 {title.split('\n').map((item, index) => (
                                                     <li key={index}>{item.trim()}</li>
                                                 ))}
                                             </ul>
-                                        </p>
+                                        </div>
                                     </div>
                                 </div>
                             ))}

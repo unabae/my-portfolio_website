@@ -27,10 +27,15 @@ const Developer = ({animationName = 'idle', ...props}) => {
     ], group);
 
     useEffect(() => {
-        actions[animationName].reset().fadeIn(0.5).play();
+        const action = actions?.[animationName];
+        if (!action) {
+            return undefined;
+        }
 
-        return () => actions[animationName].fadeOut(0.5);
-    }, [animationName]);
+        action.reset().fadeIn(0.5).play();
+
+        return () => action.fadeOut(0.5);
+    }, [actions, animationName]);
 
     return (
         <group {...props} dispose={null} ref={group}>
